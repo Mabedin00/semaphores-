@@ -58,7 +58,7 @@ int read_file(char * name) {
 
 int create_shared_memory() {
     int shmd;
-    shmd = shmget(SHM_KEY, SEG_SIZE, IPC_CREAT | 0600);
+    shmd = shmget(KEY_SHM, SEG_SIZE, IPC_CREAT | 0600);
     printf("shared memory created\n");
     return shmd;
 }
@@ -73,7 +73,7 @@ int write_line() {
     int shmd;
     char * data;
 
-    shmd = shmget(SHM_KEY, SEG_SIZE, 0600);
+    shmd = shmget(KEY_SHM, SEG_SIZE, 0600);
     if(shmd < 0) {
         printf("error %d: %s\n", errno, strerror(errno));
         return 1;

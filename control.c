@@ -8,7 +8,7 @@ int main(int argc, char * argv[]) {
             create_file(FILE_NAME);
         }
         else if (strcmp(argv[1], "-r") == 0) {
-            int semd = semget(SEM_KEY, 1, 0);
+            int semd = semget(KEY_SEM, 1, 0);
 
             struct sembuf sb;
             sb.sem_num = 0;
@@ -18,7 +18,7 @@ int main(int argc, char * argv[]) {
 
             read_file(FILE_NAME);
 
-            int shmd = shmget(SHM_KEY, SEG_SIZE, 0600);
+            int shmd = shmget(KEY_SHM, SEG_SIZE, 0600);
 
             remove_shared_memory(shmd);
             remove_file(FILE_NAME);

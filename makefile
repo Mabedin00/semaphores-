@@ -1,4 +1,4 @@
-all: control.o write.o control_control_functions.o
+all: control.o write.o control.o control_functions.o
 	gcc -o control control.o control_functions.o
 	gcc -o write write.o control_functions.o
 
@@ -11,4 +11,8 @@ write.o: write.c control_functions.h control_functions.o
 control_functions.o: control_functions.c control_functions.h
 	gcc -c control_functions.c
 
- 
+clean:
+	rm *o
+	rm control
+	rm write
+	rm story

@@ -12,7 +12,7 @@
 #define KEY_SEM 24602
 #define KEY_SHM 24603
 #define SEG_SIZE 200
-#define FILE_NAME "file"
+#define FILE_NAME "story"
 
 union semun {
     int val;

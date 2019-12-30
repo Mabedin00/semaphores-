@@ -1,7 +1,7 @@
-#include "headers.h"
+#include "control_functions.h"
 
 int main() {
-    int semd = semget(SEM_KEY, 1, 0);
+    int semd = semget(KEY_SEM, 1, 0);
     struct sembuf sb;
     sb.sem_num = 0;
     sb.sem_op = -1;
